@@ -1,7 +1,7 @@
 console.log("Popup script loaded");
 
-document.getElementById('requestPermissions').addEventListener('click', () => {
-  chrome.runtime.sendMessage({action: "requestPermissions"}, (response) => {
+document.getElementById("requestPermissions").addEventListener("click", () => {
+  chrome.runtime.sendMessage({ action: "requestPermissions" }, (response) => {
     if (response.status === "granted") {
       alert("Permissions granted successfully!");
     } else {
@@ -10,11 +10,14 @@ document.getElementById('requestPermissions').addEventListener('click', () => {
   });
 });
 
-chrome.permissions.contains({
-  permissions: ['tabs'],
-  origins: ['https://chatgpt.com/*', 'https://claude.ai/*']
-}, (result) => {
-  if (result) {
-    document.getElementById('requestPermissions').style.display = 'none';
-  }
-});
+chrome.permissions.contains(
+  {
+    permissions: ["tabs"],
+    origins: ["https://chatgpt.com/*", "https://claude.ai/*"],
+  },
+  (result) => {
+    if (result) {
+      document.getElementById("requestPermissions").style.display = "none";
+    }
+  },
+);

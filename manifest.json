@@ -3,15 +3,8 @@
   "name": "AI Chat Autocomplete",
   "version": "1.0.0",
   "description": "Autocomplete for ChatGPT and Claude based on user's previous prompts",
-  "permissions": [
-    "storage",
-    "activeTab",
-    "tabs"
-  ],
-  "host_permissions": [
-    "https://chatgpt.com/*",
-    "https://claude.ai/*"
-  ],
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": ["https://chatgpt.com/*", "https://claude.ai/*"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "AI Chat Autocomplete"
